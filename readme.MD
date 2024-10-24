@@ -85,7 +85,7 @@ Let´s have a closer look at the accounts that we are passing in this context:
 - `mint_a`: The mint of the token the maker is trading with.
 - `mint_b`: The mint of the token the maker is trading for.
 - `maker_ata_a`: The associated token account of the maker for the mint_a.
-- `escrow`: Will be the state account that we will initialize and the maker will be paying for the initialization of the account. We derive the Escrow PDA from the byte representation of the word "escrow", reference of the maker publickey and reference of the little indian bytes format of seeds we got from instruction attribute. Anchor will calculate the canonical bump (the first bump that throws that address out of the ed25519 eliptic curve) and save it for us in a struct.
+- `escrow`: Will be the state account that we will initialize and the maker will be paying for the initialization of the account. We derive the Escrow PDA from the byte representation of the word "escrow", reference of the maker publickey and reference of the little-endian bytes format of seeds we got from instruction attribute. Anchor will calculate the canonical bump (the first bump that throws that address out of the ed25519 eliptic curve) and save it for us in a struct.
 - `vault`: The vault account that will hold the tokens of mint_a until the condition is met is initialised and maker will be paying for also this. The escrow account will be the authority to this token account. 
 - `associated_token_program`: The associated token program.
 - `token_program`: The token program.
